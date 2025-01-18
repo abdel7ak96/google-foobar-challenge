@@ -1,5 +1,5 @@
-Numbers Station Coded Messages
-==============================
+# Challenge 2: Numbers Station Coded Messages
+## Challenge description
 When you went undercover in Commander Lambda's organization, you set up a coded messaging system with Bunny Headquarters to allow them to send you important mission updates. Now that you're here and promoted to Henchman, you need to make sure you can receive those messages -- but since you need to sneak them past Commander Lambda's spies, it won't be easy!
 
 Bunny HQ has secretly taken control of two of the galaxy's more obscure numbers stations, and will use them to broadcast lists of numbers. They've given you a numerical key, and their messages will be encrypted within the first sequence of numbers that adds up to that key within any given list of numbers.
@@ -18,18 +18,17 @@ To help you identify the coded broadcasts, Bunny HQ has agreed to the following 
 
 Remember, to throw off Lambda's spies, Bunny HQ might include more than one contiguous sublist of a number broadcast that can be summed up to the key. You know that the message will always be hidden in the first sublist that sums up to the key, so solution(l, t) should only return that sublist.
 
-Languages
-=========
+### Languages
 
 To provide a Python solution, edit solution.py
 To provide a Java solution, edit Solution.java
 
-Test cases
-==========
+### Test cases
 Your code should pass the following test cases.
 Note that it may also be run against hidden test cases not shown here.
 
--- Python cases --
+#### Python cases
+```python
 Input:
 solution.solution([1, 2, 3, 4], 15)
 Output:
@@ -39,8 +38,11 @@ Input:
 solution.solution([4, 3, 10, 2, 8], 12)
 Output:
     2,3
+```
 
--- Java cases --
+
+#### Java cases
+```python
 Input:
 Solution.solution({1, 2, 3, 4}, 15)
 Output:
@@ -50,3 +52,32 @@ Input:
 Solution.solution({4, 3, 10, 2, 8}, 12)
 Output:
     2,3
+```
+
+## Solution
+```python
+input_1 = ([1, 2, 3, 4], 15)
+input_2 = ([4, 3, 10, 2, 8], 12)
+
+def solution(l, t):
+  left, right = 0, 0
+  mySum = l[0]
+  
+  while right < len(l):
+    if mySum == t:
+      return [left, right]
+    elif mySum < t or left == right:
+      right += 1
+      if right == len(l):
+        return [-1, -1]
+      mySum += l[right]
+    else:
+      mySum -= l[left]
+      left += 1
+
+  return [-1, -1]
+
+print(solution([4, 3, 10, 2, 8], 12))
+print(solution([4], 4))
+print(solution([1, 2, 3, 4], 15))
+```
