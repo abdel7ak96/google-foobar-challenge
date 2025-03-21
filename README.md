@@ -1,4 +1,8 @@
 # Google Foobar Challenge
+<p align="center">
+  <img alt="Banner" src="https://github.com/user-attachments/assets/ebce6002-7b00-44f7-8a46-d74524869d8c" width="800px" />
+</p>
+
 Back in 2022, while searching for the same Git command for what felt like the 60th time, I was greeted with an unexpected screen from Google. It instantly reminded me of a story I’d heard before I even started my software career: how Google used to recruit engineers through a mysterious and challenging process. Intrigued and excited, I followed the instructions on the screen and found myself introduced to the Google Foobar challenge.
 
 > Google Foobar is a secretive recruitment method that once sought top developers and programmers worldwide. It involves solving algorithmic challenges that appear directly on a developer’s screen when they search for specific coding-related keywords. More details about it can be found [here](https://www.turing.com/kb/foobar-google-secret-hiring-technique).
